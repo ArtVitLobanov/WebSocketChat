@@ -1,0 +1,22 @@
+<div class="chat-selector-container">
+  
+  <label for="chatIdInput" class="selector-label">Active Channel Room</label>
+  
+  <div class="input-group">
+    <input 
+      type="text" 
+      id="chatIdInput"
+      class="id-input" 
+      placeholder="Enter Chat ID..." 
+      [(ngModel)]="targetChatId"
+      (keyup.enter)="selectChatRoom()" />
+      
+    <button 
+      class="select-btn" 
+      [disabled]="!targetChatId.trim()"
+      (click)="selectChatRoom()">
+      Select
+    </button>
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="main-dashboard-container">
+  
+  <aside class="dashboard-sidebar">
+    <app-sidebar-component />
+  </aside>
+
+  <main class="dashboard-main-content">
+    
+    <app-chat-window-component />
+
+    <ng-template #noChatSelectedTemplate>
+      <div class="placeholder-screen">
+        Select a chat from the sidebar to begin.
+      </div>
+    </ng-template>
+  </main>
+  
+</div>

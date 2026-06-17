@@ -1,0 +1,42 @@
+<div class="chat-viewport" #scrollViewport>
+  
+  @for (msg of messages; track msg.messageId) {
+    <div class="message-wrapper">
+      
+      <div class="message-meta">
+        <span class="author-tag">{{ msg.ownerName }}</span>
+        <span class="bullet-spacer">•</span>
+        <span class="time-stamp">{{ msg.time }}</span>
+        <span class="tracking-id">(ID: {{ msg.messageId }})</span>
+      </div>
+
+      <div class="message-body">
+        @switch (msg.messageContent.type) {
+          
+          @case ('image') {
+            <img [src]="msg.messageContent.content" class="media-bubble img-item" alt="Shared visual content" />
+          }
+          
+          @case ('video') {
+            <video [src]="msg.messageContent.content" controls class="media-bubble video-item">
+              Your browser does not support the video tag.
+            </video>
+          }
+          
+          @default {
+            <div class="text-bubble">
+              {{ msg.messageContent.content }}
+            </div>
+          }
+          
+        }
+      </div>
+
+    </div>
+  } @empty {
+    <div class="empty-state">
+      <p>No messages here yet. Start the conversation!</p>
+    </div>
+  }
+
+</div>

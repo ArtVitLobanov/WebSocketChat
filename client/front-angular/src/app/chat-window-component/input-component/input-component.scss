@@ -1,0 +1,67 @@
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+
+  .text-field {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: #4a90e2;
+    }
+  }
+
+  .file-upload-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    background-color: #f0f2f5;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    color: #4a4a4a;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+    user-select: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #e4e6eb;
+    }
+
+    .file-field {
+      display: none;
+    }
+  }
+
+  .send-button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+
+    &:disabled {
+      background-color: #cccccc;
+      color: #888888;
+      cursor: not-allowed;
+    }
+  }
+}

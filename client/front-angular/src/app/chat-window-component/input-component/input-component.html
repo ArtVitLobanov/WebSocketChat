@@ -1,0 +1,26 @@
+<div class="chat-input-container">
+  
+  <input 
+    type="text" 
+    class="text-field"
+    placeholder="Type a message..."
+    [(ngModel)]="messageText"
+    (keyup.enter)="sendTextMessage()" />
+
+  <label class="file-upload-label">
+    <span>Select File</span>
+    <input 
+      type="file" 
+      class="file-field"
+      accept="image/*, video/*" 
+      (change)="onFileSelected($event)" #fileInput />
+  </label>
+
+  <button 
+    class="send-button" 
+    [disabled]="!messageText.trim()"
+    (click)="sendTextMessage()">
+    Send
+  </button>
+
+</div>

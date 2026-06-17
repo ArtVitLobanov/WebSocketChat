@@ -1,0 +1,30 @@
+<div class="login-container">
+  <h3>Account Authentication</h3>
+  
+  <form (ngSubmit)="onLogin()" class="login-form">
+    
+    <input 
+      type="text"
+      name="userName" 
+      placeholder="Username" 
+      [(ngModel)]="username"
+      required 
+      class="form-input" />
+
+    <input 
+      type="password" 
+      name="password"
+      placeholder="Password" 
+      [(ngModel)]="password"
+      required 
+      class="form-input" />
+
+    <button 
+      type="submit" 
+      class="login-submit-btn"
+      [disabled]="!username.trim() || !password.trim()">
+      Login
+    </button>
+    
+  </form>
+</div>

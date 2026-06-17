@@ -1,0 +1,31 @@
+.main-dashboard-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  .dashboard-sidebar {
+    grid-column: 1;
+    border-right: 1px solid #ddd;
+    background-color: #fafafa;
+    overflow-y: auto; 
+  }
+
+  .dashboard-main-content {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden; 
+  }
+}
+
+.placeholder-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #888;
+  font-size: 1.2rem;
+}
